@@ -1,8 +1,10 @@
 class NavbarController {
   title = 'NG6 Employees';
-  links = [{link: '/', label: 'HOME'}]
-  constructor() {
-  }
+  navLinks = [
+    { link: 'home', label: 'HOME' },
+    { link: 'employees', label: 'EMPLOYEES' }
+  ];
+  constructor() {}
 }
 
 export default NavbarController;

@@ -1,7 +1,14 @@
 class EmployeesController {
-  constructor() {
-    this.name = 'employees';
+  name = 'employees';
+  constructor(employeesService) {
+    'ngInject';
+    this.employeesService = employeesService;
   }
+
+  $onInit() {
+
+  }
+
 }
 
 export default EmployeesController;

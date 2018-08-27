@@ -3,12 +3,14 @@ import uiRouter from 'angular-ui-router';
 import employeesComponent from './employees.component';
 import employeesList from './employeesList/employeesList';
 import employeesDetails from './employeesDetails/employeesDetails';
+import employeesService from './employees.service';
 
 let employeesModule = angular
   .module('employees', [
     uiRouter,
     employeesList,
-    employeesDetails
+    employeesDetails,
+    employeesService
   ])
 
   .config($stateProvider => {

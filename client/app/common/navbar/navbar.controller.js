@@ -1,6 +1,7 @@
 class NavbarController {
+  title = 'NG6 Employees';
+  links = [{link: '/', label: 'HOME'}]
   constructor() {
-    this.name = 'navbar';
   }
 }
 

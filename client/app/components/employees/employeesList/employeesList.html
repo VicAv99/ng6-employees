@@ -1,3 +1,13 @@
-<div>
-  <h1>{{ $ctrl.name }}</h1>
+<div class="list-group col-md-4 col-md-offset-2">
+  <a class="list-group-item" ng-repeat="emp in $ctrl.employees">
+    <h2 class="list-group-item-heading">{{ emp.fullName | uppercase }}</h2>
+    <span class="badge">
+      <div class="glyphicon glyphicon-remove"></div>
+    </span>
+    <p class="mute">- {{ emp.jobTitle }} ( {{emp.userId}} )</p>
+    <p class="list-group-item-text">
+      <strong>Email:</strong> {{ emp.emailAddress }} <br>
+      <strong>Phone:</strong> {{ emp.phoneNumber }}
+    </p>
+  </a>
 </div>

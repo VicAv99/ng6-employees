@@ -9,7 +9,7 @@ class EmployeesController {
 
   $onInit() {
     this.getAllEmployees();
-    this.initForm();
+    this.handleForm();
   }
 
   selectEmployee(employee) {
@@ -24,11 +24,43 @@ class EmployeesController {
       .catch(err => console.log('error', err));
   }
 
-  reset() {
-    this.form = this.initForm();
+  save(employee) {
+    if (employee.id) {
+      this.updateEmployee(employee);
+    } else {
+      this.createEmployee(employee);
+    }
   }
 
-  initForm() {
+  createEmployee(employee) {
+    this.employeesService
+      .create(employee)
+      .then(res => this.getAllEmployees())
+      .catch(err => console.log('error', err))
+      .finally(() => this.reset());
+  }
+
+  updateEmployee(employee) {
+    this.employeesService
+      .update(employee)
+      .then(res => this.getAllEmployees())
+      .catch(err => console.log('error', err))
+      .finally(() => this.reset());
+  }
+
+  removeEmployee(employeeId) {
+    this.employeesService
+      .remove(employeeId)
+      .then(res => this.getAllEmployees())
+      .catch(err => console.log('error', err))
+      .finally(() => this.reset());
+  }
+
+  reset() {
+    this.handleForm();
+  }
+
+  handleForm() {
     this.form = {
       id: null,
       fullName: '',

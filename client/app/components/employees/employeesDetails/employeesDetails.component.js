@@ -4,7 +4,8 @@ import './employeesDetails.scss';
 
 const bindings = {
   form: '<',
-  cancelled: '&'
+  cancelled: '&',
+  saved: '&'
 }
 
 let employeesDetailsComponent = {

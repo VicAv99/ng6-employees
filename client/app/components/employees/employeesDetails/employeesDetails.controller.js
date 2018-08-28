@@ -1,6 +1,5 @@
 class EmployeesDetailsController {
   constructor() {
-    this.name = 'employeesDetails';
   }
 }
 

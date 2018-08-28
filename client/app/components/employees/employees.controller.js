@@ -13,8 +13,8 @@ class EmployeesController {
   }
 
   selectEmployee(employee) {
-    this.selectedEmployee = employee;
-    this.form = employee;
+    this.selectedEmployee = Object.assign({}, employee);
+    this.form = Object.assign({}, employee);
   }
 
   getAllEmployees() {

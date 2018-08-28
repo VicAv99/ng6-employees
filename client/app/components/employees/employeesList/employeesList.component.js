@@ -4,7 +4,8 @@ import './employeesList.scss';
 
 const bindings = {
   employees: '<',
-  selectedEmployee: '&'
+  selectedEmployee: '&',
+  deletedEmployee: '&'
 }
 
 let employeesListComponent = {

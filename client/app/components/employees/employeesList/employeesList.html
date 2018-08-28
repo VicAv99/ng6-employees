@@ -3,7 +3,7 @@
      ng-repeat="emp in $ctrl.employees"
      ng-click="$ctrl.selectedEmployee({emp})">
     <h2 class="list-group-item-heading">{{ emp.fullName | uppercase }}</h2>
-    <span class="badge">
+    <span class="badge" ng-click="$ctrl.deletedEmployee({id:emp.id})">
       <div class="glyphicon glyphicon-remove"></div>
     </span>
     <p class="mute">- {{ emp.jobTitle }} ( {{emp.userId}} )</p>

@@ -4,7 +4,11 @@ class NavbarController {
     { link: 'home', label: 'HOME' },
     { link: 'employees', label: 'EMPLOYEES' }
   ];
-  constructor() {}
+  constructor() {
+    this.form = {
+      search: ''
+    }
+  }
 }
 
 export default NavbarController;

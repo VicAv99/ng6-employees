@@ -24,6 +24,14 @@ class EmployeesController {
       .catch(err => console.log('error', err));
   }
 
+  searchForEmployees(search) {
+    this.employeesService
+      .searchEmployee(search)
+      .then(res => this.employees = res.data)
+      .catch(err => console.log('error', err))
+      .finally(() => this.reset());
+  }
+
   save(employee) {
     if (employee.id) {
       this.updateEmployee(employee);

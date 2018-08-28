@@ -1,5 +1,4 @@
 class EmployeesController {
-  name = 'employees';
   employees = [];
   selectedEmployee = {};
   constructor(employeesService) {

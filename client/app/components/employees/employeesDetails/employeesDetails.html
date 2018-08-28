@@ -1,32 +1,48 @@
-<form class="col-md-4 well" ng-submit="$ctrl.saved({form: $ctrl.form})">
-  <div class="form-group">
+<form class="col-md-4 well" name="form" ng-submit="$ctrl.saved({form: $ctrl.form})" novalidate>
+  <div class="form-group" ng-class="{'has-error': form.fullName.$error.required && form.fullName.$touched}">
     <label for="fullName">Employee Full Name</label>
     <input type="text" class="form-control" id="fullName"
-    placeholder="Full Name" ng-model="$ctrl.form.fullName">
+    name="fullName" placeholder="Full Name" ng-model="$ctrl.form.fullName" ng-required="true">
+    <div ng-if="form.fullName.$error.required && form.fullName.$touched" class="help-block">
+      Please provide a name.
+    </div>
   </div>
-  <div class="form-group">
+  <div class="form-group" ng-class="{'has-error': form.userId.$error.required && form.userId.$touched}">
     <label for="userId">Employee Username</label>
     <input type="text" class="form-control" id="userId"
-    placeholder="Username" ng-model="$ctrl.form.userId">
+    name="userId" placeholder="Username" ng-model="$ctrl.form.userId" ng-required="true">
+    <div ng-if="form.userId.$error.required && form.userId.$touched" class="help-block">
+      Please provide a Username.
+    </div>
   </div>
-  <div class="form-group">
+  <div class="form-group" ng-class="{'has-error': form.jobTitle.$error.required && form.jobTitle.$touched}">
     <label for="empPosition">Employee Position</label>
     <input type="text" class="form-control" id="empPosition"
-    placeholder="position" ng-model="$ctrl.form.jobTitle">
+    name="jobTitle" placeholder="position" ng-model="$ctrl.form.jobTitle" ng-required="true">
+    <div ng-if="form.jobTitle.$error.required && form.jobTitle.$touched" class="help-block">
+      Please provide an employee position.
+    </div>
   </div>
-  <div class="form-group">
+  <div class="form-group" ng-class="{'has-error': form.emailAddress.$error.required && form.emailAddress.$touched}">
     <label for="empEmail">Employee Email</label>
     <input type="text" class="form-control" id="empEmail"
-    placeholder="Email" ng-model="$ctrl.form.emailAddress">
+    name="emailAddress" placeholder="Email" ng-model="$ctrl.form.emailAddress" ng-required="true">
+    <div ng-if="form.emailAddress.$error.required && form.emailAddress.$touched" class="help-block">
+      Please provide an Email Address.
+    </div>
   </div>
-  <div class="form-group">
+  <div class="form-group" ng-class="{'has-error': form.phoneNumber.$error.required && form.phoneNumber.$touched}">
     <label for="empPhone">Employee Phone Number</label>
     <input type="text" class="form-control" id="empPhone"
-    placeholder="Phone" ng-model="$ctrl.form.phoneNumber">
+    name="phoneNumber" placeholder="Phone" ng-model="$ctrl.form.phoneNumber" ng-required="true">
+    <div ng-if="form.phoneNumber.$error.required && form.phoneNumber.$touched" class="help-block">
+      Please provide a Phone Number.
+    </div>
   </div>
   <div class="pull-right">
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary" ng-disabled="form.$invalid">Submit</button>
     <button type="button" class="btn btn-warning"
     ng-click="$ctrl.cancelled()">Cancel</button>
   </div>
 </form>
+

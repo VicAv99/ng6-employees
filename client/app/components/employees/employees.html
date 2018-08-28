@@ -1,6 +1,9 @@
 <navbar></navbar>
 
-<employees-list employees="$ctrl.employees">
+<employees-list employees="$ctrl.employees"
+                selected-employee="$ctrl.selectEmployee(emp)">
 </employees-list>
 
-<employees-details></employees-details>
+<employees-details form="$ctrl.form"
+                   cancelled="$ctrl.reset()">
+</employees-details>

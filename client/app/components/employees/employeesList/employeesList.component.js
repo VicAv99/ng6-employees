@@ -3,7 +3,8 @@ import controller from './employeesList.controller';
 import './employeesList.scss';
 
 const bindings = {
-  employees: '<'
+  employees: '<',
+  selectedEmployee: '&'
 }
 
 let employeesListComponent = {

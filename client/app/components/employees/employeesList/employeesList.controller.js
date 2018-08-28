@@ -1,6 +1,6 @@
 class EmployeesListController {
-  constructor() {
-    this.name = 'employeesList';
+  constructor($scope) {
+    'ngInject';
   }
 }
 
